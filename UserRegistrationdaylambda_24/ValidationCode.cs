@@ -134,7 +134,6 @@ namespace UserRegistrationdaylambda_24
                     return " failed validation.";
                 }
            
-
         }
     }
 }
