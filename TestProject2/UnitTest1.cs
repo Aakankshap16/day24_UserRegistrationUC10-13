@@ -31,7 +31,7 @@ namespace TestProject2
                 Assert.AreEqual("Valid Phone Number!", phoneValidationResult);
                 Assert.AreEqual("Valid Password!", passwordValidationResult);
             }
-
+        /*
             //SAD TEST CASE
             [TestMethod]
             public void ValidateUserEntry_ValidInputs_ReturnsInValidMessages()
@@ -60,6 +60,7 @@ namespace TestProject2
                 Assert.AreEqual("Invalid Phone Number. Please enter a valid Phone Number.", phoneValidationResult);
                 Assert.AreEqual("Invalid Password. Please enter a valid Password.", passwordValidationResult);
             }
+        */
 
         //TEST CASE FOR EMAIL
         [TestMethod]
@@ -80,6 +81,50 @@ namespace TestProject2
             Assert.AreEqual("your email passed validation", AllEmailValidationResult);
            
         }
+
+        [TestMethod]
+        public void ValidateUserEntry_InvalidInputs_ThrowsCustomExceptions()
+        {
+            // Arrange
+            string firstName = "Aa";
+            string lastName = "dey";
+            string email = "aakanks.com";
+            string phone = "911234567890";
+            string password = "Ab234";
+            ValidationCode validationCode = new ValidationCode();
+
+            // Assert
+            Assert.ThrowsException<InvalidFirstNameException>(() =>
+            {
+                // Act
+                validationCode.ValidateFirstName(firstName);
+            });
+
+            Assert.ThrowsException<InvalidLastNameException>(() =>
+            {
+                // Act
+                validationCode.ValidateLastName(lastName);
+            });
+
+            Assert.ThrowsException<InvalidEmailException>(() =>
+            {
+                // Act
+                validationCode.ValidateEmail(email);
+            });
+
+            Assert.ThrowsException<InvalidPhoneException>(() =>
+            {
+                // Act
+                validationCode.ValidatePhone(phone);
+            });
+
+            Assert.ThrowsException<InvalidPasswordException>(() =>
+            {
+                // Act
+                validationCode.ValidatePassword(password);
+            });
+        }
+
 
 
     }
