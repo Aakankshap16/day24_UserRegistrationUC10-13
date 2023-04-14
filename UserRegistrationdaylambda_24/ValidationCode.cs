@@ -106,7 +106,7 @@ namespace UserRegistrationdaylambda_24
         }
 
         // validate each email sample using lambda expression
-        public void ValidateAllEmailSample()
+        public string ValidateAllEmailSample(string email2)
         {
             string[] emailSamples = new string[] { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc111@abc.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com" };
 
@@ -119,19 +119,20 @@ namespace UserRegistrationdaylambda_24
 
 
             Array.ForEach(emailSamples, email => {
-                Console.Write("Please enter your email address: ");
-                string email2 = Console.ReadLine();
+                //Console.Write("Please enter your email address: ");
+                //string email2 = Console.ReadLine();
+            });
 
 
-                if (Email(email2) == true)
+            if (Email(email2) == true)
                 {
-                    Console.WriteLine(email2 + " passed validation.");
+                    return "your email passed validation";
                 }
                 else
                 {
-                    Console.WriteLine(email2 + " failed validation.");
+                    return " failed validation.";
                 }
-            });
+           
 
         }
     }
