@@ -21,7 +21,7 @@ namespace UserRegistrationdaylambda_24
             }
             else
             {
-                return "Invalid first name. Please enter a first name starting with a capital letter and at least 3 characters.";
+                throw new InvalidFirstNameException("Invalid first name. Please enter a first name starting with a capital letter and at least 3 characters.");
             }
         }
 
@@ -37,7 +37,7 @@ namespace UserRegistrationdaylambda_24
             }
             else
             {
-                return "Invalid last name. Please enter a last name starting with a capital letter and at least 3 characters.";
+                throw new InvalidLastNameException("Invalid last name. Please enter a last name starting with a capital letter and at least 3 characters.");
             }
         }
 
@@ -59,7 +59,7 @@ namespace UserRegistrationdaylambda_24
             }
             else
             {
-                return "Invalid email. Please enter a valid email address.";
+                throw new InvalidEmailException("Invalid email. Please enter a valid email address.");
             }
         }
 
@@ -80,7 +80,8 @@ namespace UserRegistrationdaylambda_24
             }
             else
             {
-                return "Invalid Phone Number. Please enter a valid Phone Number.";
+                throw new InvalidPhoneException("Invalid Phone Number. Please enter a valid Phone Number.");
+
             }
         }
 
@@ -101,7 +102,7 @@ namespace UserRegistrationdaylambda_24
             }
             else
             {
-                return "Invalid Password. Please enter a valid Password.";
+                throw new InvalidPasswordException("Invalid Password. Please enter a valid Password.");
             }
         }
 
