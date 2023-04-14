@@ -4,10 +4,8 @@ namespace TestProject2
     [TestClass]
     public class UnitTest1
     {
+        //HAPPY TEST CASE
         [TestMethod]
-        
-            //HAPPY TEST CASE
-
             public void ValidateUserEntry_ValidInputs_ReturnsValidMessages()
             {
                 //ARRNGE
@@ -54,7 +52,7 @@ namespace TestProject2
                 var passwordValidationResult = validationCode.ValidatePassword(password);
 
                 //ASSERT
-                // Assert.AreEqual("Valid first name!", firstNameValidationResult);
+                
 
                 Assert.AreEqual("Invalid first name. Please enter a first name starting with a capital letter and at least 3 characters.", firstNameValidationResult);
                 Assert.AreEqual("Invalid last name. Please enter a last name starting with a capital letter and at least 3 characters.", lastNameValidationResult);
@@ -63,6 +61,26 @@ namespace TestProject2
                 Assert.AreEqual("Invalid Password. Please enter a valid Password.", passwordValidationResult);
             }
 
-        
+        //TEST CASE FOR EMAIL
+        [TestMethod]
+        public void ValidateUserEntry_ValidInputs_ReturnsValidEmail()
+        {
+            //ARRNGE
+           
+            string email2 = "aakanksha@gmail.com";
+          
+
+            //ACT
+            ValidationCode validationCode = new ValidationCode();
+
+            var AllEmailValidationResult = validationCode.ValidateAllEmailSample(email2);
+
+            //ASSERT
+           
+            Assert.AreEqual("your email passed validation", AllEmailValidationResult);
+           
+        }
+
+
     }
 }
